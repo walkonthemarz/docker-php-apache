@@ -1,10 +1,10 @@
-FROM php:7.3-apache-buster
+FROM php:7.4-apache-buster
 
 MAINTAINER walkonthemarz@gmail.com
 
-ARG APCU_VERSION=5.1.11
-ARG REDIS_VERSION=5.0.2
-ARG MCRYPT_VERSION=1.0.3
+ARG APCU_VERSION=5.1.18
+ARG REDIS_VERSION=5.1.1
+ARG MCRYPT_VERSION=1.0.11
 
 RUN apt update \
       && apt upgrade -y \
