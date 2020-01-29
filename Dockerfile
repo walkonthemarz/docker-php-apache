@@ -18,7 +18,7 @@ RUN docker-php-ext-install bcmath \
       && docker-php-ext-install pdo_mysql \
       && docker-php-ext-install tokenizer \
       && docker-php-ext-install mysqli \
-      && docker-php-ext-install -j$(nproc) gd \
+      && docker-php-ext-configure gd --with-freetype --with-jpeg && docker-php-ext-install -j$(nproc) gd \
       && pecl install redis-${REDIS_VERSION} && docker-php-ext-enable redis \
       && pecl install mcrypt-${MCRYPT_VERSION} && docker-php-ext-enable mcrypt \
       && pecl install apcu-${APCU_VERSION} && docker-php-ext-enable apcu \
